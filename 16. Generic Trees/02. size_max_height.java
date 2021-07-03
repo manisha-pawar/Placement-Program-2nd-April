@@ -57,6 +57,7 @@ public class Main {
     }
 
 
+
     //size of tree
     public static int size(Node node) {
         int ts = 0; //total size
@@ -133,30 +134,6 @@ public class Main {
     }
 
 
-
-    //level-order
-    public static void levelOrder(Node root) {
-        Queue < Node > q = new ArrayDeque < > ();
-
-        q.add(root);
-
-        while (q.size() > 0) {
-            //remove
-            Node rem = q.remove();
-
-            //print
-            System.out.print(rem.data + " ");
-
-            //add children
-            for (int i = 0; i < rem.children.size(); i++) {
-                Node child = rem.children.get(i);
-                q.add(child);
-            }
-        }
-
-        System.out.println(".");
-
-    }
 
     public static void main(String[] args) {
         int[]data = {10,20,50,-1,60,-1,-1,30,70,-1,80,110,-1,120,-1,-1,90,-1,-1,40,100,-1,-1,-1};
