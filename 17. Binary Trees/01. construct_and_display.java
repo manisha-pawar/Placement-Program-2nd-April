@@ -91,6 +91,22 @@ public class Main {
         display(root.right); 
     }
 
+    static String pre;
+    static String in;
+    static String post;
+
+    public static void traversal(Node node) {
+        if(node == null) {
+            return;
+        }
+       
+        pre += node.data;  //pre
+        traversal(node.left); //left call
+        in += node.data;  //in
+        traversal(node.right); //right call
+        post += node.data; //post
+    }
+    
     public static void main(String[]args) {
 
         int[]arr = {10,20,-1,40,60,-1,-1,70,-1,-1,30,50,-1,-1,-1};
@@ -98,5 +114,11 @@ public class Main {
         Node root = construct(arr);
 
         display(root);
+
+        pre = "";
+        in = "";
+        post = "";
+
+        traversal(root);
     }
 }
